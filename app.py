@@ -1,5 +1,4 @@
 import streamlit as st
-import numpy as np
 from sklearn.linear_model import LinearRegression
 import pickle
 
@@ -9,7 +8,7 @@ model = pickle.load(open(filename, "rb"))
 st.title('Revenue Prediction')
 x_new = st.number_input('Input Temperature')
 if st.button('Predict'):
+    x_new = np.array(x_new)
+    x_new = x_new.reshape(-1, 1)
     y_pred = model.predict(x_new)
-    st.success(y_pred)
-
-
+    st.success(*y_pred)
