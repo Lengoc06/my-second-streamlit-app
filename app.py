@@ -5,12 +5,11 @@ import pickle
 
 filename = 'model.pickle'
 model = pickle.load(open(filename, "rb"))
-model = np.array(model)
 
 st.title('Revenue Prediction')
 x_new = st.number_input('Input Temperature')
 if st.button('Predict'):
-    y_pred = model[x_new]
+    y_pred = model.predict(x_new)
     st.success(y_pred)
 
 
