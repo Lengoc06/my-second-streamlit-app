@@ -14,9 +14,10 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1, random_
 from sklearn.linear_model import LinearRegression
 x_train = x_train.reshape(-1,1)
 model = LinearRegression()
-model.fit(x_train, y_train)import streamlit as st
-import plotly.graph_objects as go
+model.fit(x_train, y_train)
 
+import streamlit as st
+import plotly.graph_objects as go
 st.title('Revenue Prediction')
 x_new = st.number_input('Input Temperature')
 if st.button('Predict'):
