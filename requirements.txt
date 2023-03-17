@@ -1,3 +1,2 @@
 pickles
 scikit-learn
-plotly
