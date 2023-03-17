@@ -6,8 +6,10 @@ filename = 'model.pickle'
 model = pickle.load(open(filename, "rb"))
 
 st.title('Revenue Prediction')
-x_new = st.number_input('Input Temperature')
+a = st.number_input('Input Temperature')
 if st.button('Predict'):
+    x_new = []
+    x_new.append(a)
     x_new = np.array(x_new)
     x_new = x_new.reshape(-1, 1)
     y_pred = model.predict(x_new)
