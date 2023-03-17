@@ -1,6 +1,6 @@
-'''from google.colab import drive
+from google.colab import drive
 drive.mount('/content/drive')
-'''
+
 import pandas as pd
 import numpy as np
 df = pd.read_csv('/content/drive/MyDrive/IceCreamData.csv')
